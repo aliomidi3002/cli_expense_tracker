@@ -1,5 +1,6 @@
 import sys
 from Feature.add import add
+from Feature.delete import delete
 
 def main():
     if len(sys.argv) <= 1:
@@ -15,12 +16,18 @@ def main():
             amount = float(sys.argv[3])
             category = sys.argv[4] if len(sys.argv) > 4 else "General"
             add(description, amount, category)
-    # Users can view all expenses.
-    elif sys.argv[1] == "view":
-        print("Viewing expenses...")
+    
     # Users can delete an expense.
     elif sys.argv[1] == "delete":
-        print("Deleting an expense...")
+        if len(sys.argv) < 3:
+            print("Usage: python main.py delete <description>")
+        else:
+            description = sys.argv[2]
+            delete(description)
+
+     # Users can view all expenses.
+    elif sys.argv[1] == "view":
+        print("Viewing expenses...")
     # Users can update an expense.
     elif sys.argv[1] == "update":
         print("Updating an expense...")
@@ -30,9 +37,6 @@ def main():
     # Users can view a summary of expenses for a specific month (of current year).
     elif sys.argv[1] == "monthly":
         print("Generating a monthly report...")
-    # Add expense categories and allow users to filter expenses by category.
-    elif sys.argv[1] == "category":
-        print("Filtering expenses by category...")
     # Allow users to set a budget for each month and show a warning when the user exceeds the budget.
     elif sys.argv[1] == "budget":
         print("Setting a budget...")
