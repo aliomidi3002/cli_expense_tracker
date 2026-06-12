@@ -4,5 +4,23 @@
         "amount": 120.0,
         "date": "2026-06-11 20:47:56",
         "category": "General"
+    },
+    {
+        "description": "suci",
+        "amount": 70.0,
+        "date": "2026-06-11 21:00:37",
+        "category": "food"
+    },
+    {
+        "description": "coffee",
+        "amount": 2.0,
+        "date": "2026-06-11 21:01:00",
+        "category": "food"
+    },
+    {
+        "description": "grocery",
+        "amount": 200.0,
+        "date": "2026-06-11 21:01:32",
+        "category": "General"
     }
 ]

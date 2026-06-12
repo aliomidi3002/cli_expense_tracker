@@ -1,6 +1,7 @@
 import sys
 from Feature.add import add
 from Feature.delete import delete
+from Feature.view import view
 
 def main():
     if len(sys.argv) <= 1:
@@ -27,7 +28,12 @@ def main():
 
      # Users can view all expenses.
     elif sys.argv[1] == "view":
-        print("Viewing expenses...")
+        if len(sys.argv) > 2:
+            category = sys.argv[2]
+            view(category)
+        else:            
+            view()
+
     # Users can update an expense.
     elif sys.argv[1] == "update":
         print("Updating an expense...")
