@@ -13,9 +13,9 @@
     },
     {
         "description": "coffee",
-        "amount": 2.0,
+        "amount": 5.0,
         "date": "2026-06-11 21:01:00",
-        "category": "food"
+        "category": "grocery"
     },
     {
         "description": "grocery",

@@ -2,6 +2,7 @@ import sys
 from Feature.add import add
 from Feature.delete import delete
 from Feature.view import view
+from Feature.update import update
 
 def main():
     if len(sys.argv) <= 1:
@@ -36,7 +37,14 @@ def main():
 
     # Users can update an expense.
     elif sys.argv[1] == "update":
-        print("Updating an expense...")
+        if len(sys.argv) < 3:
+            print("Usage: python main.py update <description> [new_amount] [new_category]")
+        else:
+            description = sys.argv[2]
+            new_amount = float(sys.argv[3]) if len(sys.argv) > 3 else None
+            new_category = sys.argv[4] if len(sys.argv) > 4 else None
+            update(description, new_amount, new_category)
+
     # Users can view a summary of all expenses.
     elif sys.argv[1] == "report":
         print("Generating a report...")
